@@ -9,9 +9,20 @@
     <%# photosにするとエラーになる理由を明確にする %>
 </div>
 
-<% current_user.photos.each do |photo| %>
+
+<%# <% @photo.each do |photo| ← これでも動く %>
+<%# <% current_user.photos.each do |photo| %>
+<%# current_user.photos.each do |photo|のように記述できる理由がわからない %>
+    <%# <div> %>
+        <%# <p><%= photo.caption %>
+        <%# <%= image_tag photo.image %>
+    <%# </div> %>
+<%# <% end %>
+
+
+<% User.all.each do |user| %>
     <div>
-        <p><%= photo.caption %></p>
-        <%= image_tag photo.image %>
+        <%= link_to user.email, [user] %>
+        <%# [user]は配列がなくても動く。 %>
     </div>
 <% end %>
