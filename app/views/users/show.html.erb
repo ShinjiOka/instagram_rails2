@@ -1,0 +1,17 @@
+<h3><%= @user.email %></h3>
+
+<%# <% @photo.each do |photo| ← これでも動く %>
+<%# <% current_user.photos.each do |photo| %>
+<%# current_user.photos.each do |photo|のように記述できる理由がわからない %>
+    <%# <div> %>
+        <%# <p><%= photo.caption %>
+        <%# <%= image_tag photo.image %>
+    <%# </div> %>
+<%# <% end %>
+
+<% @user.photos.each do |photo| %>
+    <div>
+        <p><%= photo.caption %></p>
+        <%= image_tag photo.image %>
+    </div>
+<% end %>
