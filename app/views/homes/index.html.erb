@@ -3,3 +3,15 @@
 <div>
     <%= link_to 'logout', destroy_user_session_path, method: :delete %>
 </div>
+
+<div>
+    <%= link_to '写真投稿', [:new, :photo] %>
+    <%# photosにするとエラーになる理由を明確にする %>
+</div>
+
+<% current_user.photos.each do |photo| %>
+    <div>
+        <p><%= photo.caption %></p>
+        <%= image_tag photo.image %>
+    </div>
+<% end %>
